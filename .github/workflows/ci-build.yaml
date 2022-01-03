@@ -32,7 +32,7 @@ jobs:
         env:
           IMAGE_REG: docker.io
           IMAGE_REPO: ncorplab/telerikdemo
-          IMAGE_TAG: $GITHUB_SHA
+          IMAGE_TAG: $github_sha
         run: |
           docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
         #  docker tag $IMAGE_TAG $IMAGE_REG/$IMAGE_REPO:latest
