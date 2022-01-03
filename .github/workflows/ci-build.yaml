@@ -35,7 +35,7 @@ jobs:
           IMAGE_TAG: ${{github.sha}}
         run: |
           docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
-          docker tag $IMAGE_TAG $IMAGE_REG/$IMAGE_REPO:latest
+          docker tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG $IMAGE_REG/$IMAGE_REPO:latest
       
       - name: Docker Push
         env:
