@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
+      
+      - name: Set current date as env variable
+        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV  
 
       - name: docker login
         env:
@@ -30,9 +33,10 @@ jobs:
         env:
           IMAGE_REG: docker.io
           IMAGE_REPO: ncorplab/telerikdemo
-          IMAGE_TAG: latest
+          IMAGE_TAG: $NOW
         run: |
-          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$(date +%s)
+          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
+          docker tag $IMAGE_TAG $IMAGE_REG/$IMAGE_REPO:latest
       
       - name: Docker Push
         env:
