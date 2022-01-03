@@ -6,8 +6,6 @@ on:
     - main
 
 env:
-  DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
-  DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
   IMAGE_REG: docker.io
   IMAGE_REPO: ncorplab/telerikdemo
   IMAGE_TAG: latest
@@ -46,11 +44,14 @@ jobs:
       - uses: actions/checkout@v2
       - name: docker login
         env:
-          DOCKER_USER: ${{secrets.DOCKER_USER}}
-          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+          DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER}}
+          DOCKERHUB_PASS: ${{secrets.DOCKERHUB_PASS}}
+          IMAGE_REG: docker.io
+          IMAGE_REPO: ncorplab/telerikdemo
+          IMAGE_TAG: latest
         
         run: |
-        docker login -u ${{DOCKER_USER}} -p ${{DOCKER_PASSWORD}} 
+        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
       
       - name: Build the Docker image
         run: docker build . --file /build/Dockerfile --tag $(IMAGE_REG)/$(IMAGE_REPO):$(IMAGE_TAG)
