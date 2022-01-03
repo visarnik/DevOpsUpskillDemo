@@ -9,27 +9,7 @@ permissions:
   packages: write
 
 jobs:
-  test:
-    name: 'Tests & Linting'
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-
-      - name: 'Run linting'
-        run: make lint
-
-      - name: 'Run tests'
-        run: make test-report
-
-      - name: 'Upload test results'
-        uses: actions/upload-artifact@v2
-        
-        # Disabled when running locally with the nektos/act tool
-        if: ${{ always() }}
-        with:
-          name: test-results
-          path: ./src/mochawesome-report
+  
 
   build:
     name: 'Build & Push Image'
@@ -47,7 +27,7 @@ jobs:
           IMAGE_REG: docker.io
           IMAGE_REPO: ncorplab/telerikdemo
           IMAGE_TAG: latest
-        run: docker build . --file /build/Dockerfile --tag $(IMAGE_REG)/$(IMAGE_REPO):$(IMAGE_TAG)
+        run: docker build . --file /build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
       
       - name: Docker Push
         env:
