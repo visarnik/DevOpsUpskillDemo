@@ -34,7 +34,7 @@ jobs:
           IMAGE_REPO: ncorplab/telerikdemo
           IMAGE_TAG: ${{env.GITHUB_SHA}}
         run: |
-          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
+          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:latest
         #  docker tag $IMAGE_TAG $IMAGE_REG/$IMAGE_REPO:latest
       
       - name: Docker Push
