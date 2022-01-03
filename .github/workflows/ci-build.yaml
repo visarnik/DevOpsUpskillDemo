@@ -38,5 +38,5 @@ jobs:
         env:
           IMAGE_REPO: ncorplab/telerikdemo
         run: |
-          docker push $IMAGE_REPO
+          docker push -a $IMAGE_REPO
       
