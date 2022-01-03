@@ -31,6 +31,11 @@ jobs:
           IMAGE_REPO: ncorplab/telerikdemo
           IMAGE_TAG: latest
         run: |
-          /usr/bin/docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
+          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
       
+      - name: Docker Push
+        env:
+          IMAGE_REPO: ncorplab/telerikdemo
+        run: |
+          docker push $IMAGE_REPO
       
