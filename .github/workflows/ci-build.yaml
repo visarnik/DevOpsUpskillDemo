@@ -46,7 +46,7 @@ jobs:
           IMAGE_TAG: latest
         
         run: |
-        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
+          docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
       
       - name: Build the Docker image
         run: docker build . --file /build/Dockerfile --tag $(IMAGE_REG)/$(IMAGE_REPO):$(IMAGE_TAG)
