@@ -38,8 +38,8 @@ jobs:
           docker tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG $IMAGE_REG/$IMAGE_REPO:latest
       
       - name: Docker Push
-        env:
-          IMAGE_REPO: ncorplab/telerikdemo
+       # env:
+       #   IMAGE_REPO: ncorplab/telerikdemo
         run: |
           docker push -a $IMAGE_REPO
       
