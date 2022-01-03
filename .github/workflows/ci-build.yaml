@@ -30,9 +30,9 @@ jobs:
         env:
           IMAGE_REG: docker.io
           IMAGE_REPO: ncorplab/telerikdemo
-          IMAGE_TAG: $(date +%s)
+          IMAGE_TAG: latest
         run: |
-          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
+          docker build . --file ./build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$(date +%s)
       
       - name: Docker Push
         env:
