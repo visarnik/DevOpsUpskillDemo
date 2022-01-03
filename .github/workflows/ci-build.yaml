@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
-        
+
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9  
         with:
@@ -30,11 +30,13 @@ jobs:
           IMAGE_REG: docker.io
           IMAGE_REPO: ncorplab/telerikdemo
           IMAGE_TAG: latest
-        run: docker build . --file /build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
+        run: |
+          docker build . --file /build/Dockerfile --tag $IMAGE_REG/$IMAGE_REPO:$IMAGE_TAG
       
       - name: Docker Push
         env:
           IMAGE_REPO: ncorplab/telerikdemo
-        run: docker push $(IMAGE_REPO)
+        run: |
+          docker push $(IMAGE_REPO)
       
       
