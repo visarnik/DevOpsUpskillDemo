@@ -45,7 +45,7 @@ metadata:
           nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: demo.ncorp.net
+  - host: devops-demo.tick42.com
     http:
       paths:
       - path: /
