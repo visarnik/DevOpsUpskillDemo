@@ -3687,6 +3687,7 @@ spec:
       - command:
         - /shared/argocd-dex
         - rundex
+        - --insecure
         image: ghcr.io/dexidp/dex:v2.30.0
         imagePullPolicy: Always
         name: dex
