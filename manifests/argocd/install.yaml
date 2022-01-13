@@ -3687,7 +3687,6 @@ spec:
       - command:
         - /shared/argocd-dex
         - rundex
-        - --insecure
         image: ghcr.io/dexidp/dex:v2.30.0
         imagePullPolicy: Always
         name: dex
@@ -4050,6 +4049,7 @@ spec:
         - argocd-server
         - --redis
         - argocd-redis-ha-haproxy:6379
+        - --insecure
         env:
         - name: ARGOCD_API_SERVER_REPLICAS
           value: "2"
