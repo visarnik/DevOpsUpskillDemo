@@ -22,8 +22,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: ncorplab/telerikdemo:f41540fcf7dabe07f88c7a18bdc0c81325ab1514
-        ports:
+        image: ncorplab/telerikdemo:latest
         - containerPort: 3000
 ---
 apiVersion: v1
