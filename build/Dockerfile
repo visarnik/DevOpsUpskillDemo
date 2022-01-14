@@ -5,7 +5,6 @@ FROM ${ARCH}node:$IMAGE_BASE
 LABEL Name="Node.js Demo App" Version=4.8.5
 LABEL org.opencontainers.image.source = "https://github.com/benc-uk/nodejs-demoapp"
 ENV NODE_ENV production
-ENV WEATHER_API_KEY=88e9b797e2a09f1d3036fde3a2b89f5f
 WORKDIR /app 
 
 # For Docker layer caching do this BEFORE copying in rest of app
