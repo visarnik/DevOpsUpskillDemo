@@ -11,10 +11,8 @@ metadata:
   labels:
     app: demo
   annotations:
-      keel.sh/policy: force
-      keel.sh/match-tag: "true"
-      keel.sh/trigger: poll      
-      keel.sh/pollSchedule: "@every 1m"  
+      argocd-image-updater.argoproj.io/image-list: ncorplab/telerikdemo
+      argocd-image-updater.argoproj.io/ncorplab/telerikdemo.update-strategy: latest
 spec:
   replicas: 3
   selector:
