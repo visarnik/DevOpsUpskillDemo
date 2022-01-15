@@ -11,8 +11,8 @@ metadata:
   labels:
     app: demo
   annotations:
-      argocd-image-updater.argoproj.io/image-list: 'ncorplab/telerikdemo'
-      argocd-image-updater.argoproj.io/ncorplab/telerikdemo.update-strategy: 'latest'
+      argocd-image-updater.argoproj.io/image-list: demoimage=ncorplab/telerikdemo
+      argocd-image-updater.argoproj.io/ncorplab/telerikdemo.update-strategy: latest
 spec:
   replicas: 3
   selector:
