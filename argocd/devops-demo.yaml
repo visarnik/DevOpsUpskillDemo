@@ -8,6 +8,7 @@ metadata:
   annotations:
       argocd-image-updater.argoproj.io/image-list: demoimage=ncorplab/telerikdemo
       argocd-image-updater.argoproj.io/demoimage.update-strategy: latest
+      argocd-image-updater.argoproj.io/demoimage.force-update: "true"
       argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   destination:
