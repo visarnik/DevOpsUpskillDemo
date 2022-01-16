@@ -63,7 +63,7 @@ jobs:
           file: ./build/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: 
+          tags: |
             ${{ secrets.DOCKERHUB_USER }}/telerikdemo:${{github.sha}}
             ${{ secrets.DOCKERHUB_USER }}/telerikdemo:latest
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/telerikdemo:latest
