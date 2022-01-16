@@ -1,2 +1,5 @@
 resources:
-- deploy-all.yaml
+- demo-deployment.yaml
+- demo-ingress.yaml
+- demo-service.yaml
+- demo-namespace.yaml
