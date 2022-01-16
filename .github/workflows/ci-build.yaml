@@ -66,6 +66,6 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USER }}/telerikdemo:${{github.sha}}
             ${{ secrets.DOCKERHUB_USER }}/telerikdemo:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/telerikdemo:latest
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/telerikdemo:latest,mode=max
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/telerikdemo:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USER }}/telerikdemo:buildcache,mode=max
       
