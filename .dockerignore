@@ -8,7 +8,7 @@ docker-compose*
 README.md
 LICENSE
 .vscode
-**/.env*
+#**/.env*
 **/.eslintrc.js
 **/mochawesome-report/
 **/node_modules
