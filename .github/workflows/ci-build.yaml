@@ -9,9 +9,9 @@ permissions:
   packages: write
 
 jobs:
-  
-  test:
-    name: 'Tests & Linting'
+
+  Linting:
+    name: 'Linting'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -19,13 +19,19 @@ jobs:
 
       - name: 'Run linting'
         run: make lint
+  
+  test:
+    name: 'Tests'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
 
       - name: 'Run tests'
         run: make test-report
 
       - name: 'Upload test results'
         uses: actions/upload-artifact@v2
-        # Disabled when running locally with the nektos/act tool
         if: ${{ always() }}
         with:
           name: test-results
@@ -38,8 +44,6 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
-
-        
        
       - name: docker login
         env:

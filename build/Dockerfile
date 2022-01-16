@@ -16,8 +16,6 @@ RUN npm install --production --silent
 
 # NPM is done, now copy in the rest of the project to the workdir
 COPY src/. .
-COPY manifests/* /demo/
-COPY src/* /demo1/
 
 # Port 3000 for our Express server 
 EXPOSE 3000
