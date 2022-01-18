@@ -62,7 +62,6 @@ jobs:
           command: test
           args: | 
             --severity-threshold=low
-            --file=scr/package.json
             --detection-depth=15
             
 
