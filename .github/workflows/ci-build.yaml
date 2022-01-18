@@ -54,13 +54,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: change directory
-        run: |
-          cd src
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
+      - name: change directory
+        run: |
+          cd src/
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}      
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: | 
+            --severity-threshold=low
+            
 
   build:
     name: 'Build & Push Image'
