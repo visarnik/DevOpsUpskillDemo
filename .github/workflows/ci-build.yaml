@@ -63,6 +63,7 @@ jobs:
           args: | 
             --severity-threshold=low
             --file=./scr/package.json
+            --detection-depth=15
             
 
   build:
