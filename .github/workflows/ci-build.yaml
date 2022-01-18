@@ -56,7 +56,6 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
-      - name: change directory
         run: |
           cd src/
         env:
