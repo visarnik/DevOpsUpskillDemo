@@ -37,7 +37,7 @@ jobs:
         with:
           name: test-results
           path: ./src/mochawesome-report
-  SAST:
+  Sonar:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -50,15 +50,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
   
-  security:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            
 
   build:
     name: 'Build & Push Image'
