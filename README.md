@@ -1,33 +1,8 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=visarnik_DevOpsUpskillDemo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) 
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=visarnik_DevOpsUpskillDemo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) [![Build App](https://github.com/visarnik/DevOpsUpskillDemo/actions/workflows/ci-build.yaml/badge.svg)](https://github.com/visarnik/DevOpsUpskillDemo/actions/workflows/ci-build.yaml) 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) 
 # Node.js - Demo Web Application
 
-This is a simple Node.js web app using the Express framework and EJS templates.
 
-The app has been designed with cloud native demos & containers in mind, in order to provide a real working application for deployment, something more than "hello-world" but with the minimum of pre-reqs. It is not intended as a complete example of a fully functioning architecture or complex software design.
-
-Typical uses would be deployment to Kubernetes, demos of Docker, CI/CD (build pipelines are provided), deployment to cloud (Azure) monitoring, auto-scaling
-
-The app has several basic pages accessed from the top navigation menu, some of which are only lit up when certain configuration variables are set (see 'Optional Features' below):
-
-- **'Info'** - Will show system & runtime information, and will also display if the app is running from within a Docker container and Kubernetes.
-- **'Tools'** - Some tools useful in demos, such a forcing CPU load (for autoscale demos), and error/exception pages for use with App Insights or other monitoring tool.
-- **'Monitor'** - Display realtime monitoring data, showing memory usage/total and process CPU load.
-- **'Weather'** - (Optional) Gets the location of the client page (with HTML5 Geolocation). The resulting location is used to fetch weather data from the [OpenWeather](https://openweathermap.org/) API
-- **'Todo'** - (Optional) This is a small todo/task-list app which uses MongoDB as a database.
-- **'User Account'** - (Optional) When configured with Azure AD (application client id and secret) user login button will be enabled, and an user-account details page enabled, which calls the Microsoft Graph API
-
-![screen](https://user-images.githubusercontent.com/14982936/55620043-dfe96480-5791-11e9-9746-3b42a3a41e5f.png)
-![screen](https://user-images.githubusercontent.com/14982936/55620045-dfe96480-5791-11e9-94f3-6d788ed447c1.png)
-![screen](https://user-images.githubusercontent.com/14982936/58764072-d8102b80-855a-11e9-993f-21ef0344d5e0.png)
-
-# Status
-
-![](https://img.shields.io/github/last-commit/benc-uk/nodejs-demoapp) ![](https://img.shields.io/github/release-date/benc-uk/nodejs-demoapp) ![](https://img.shields.io/github/v/release/benc-uk/nodejs-demoapp) ![](https://img.shields.io/github/commit-activity/y/benc-uk/nodejs-demoapp)
-
-Live instance:
-
-[![](https://img.shields.io/website?label=Hosted%3A%20Kubernetes&up_message=online&url=https%3A%2F%2Fnodejs-demoapp.kube.benco.io%2F)](https://nodejs-demoapp.kube.benco.io/)
 
 # Running and Testing Locally
 
@@ -160,22 +135,3 @@ If running in an Azure Web App, all of these values can be injected as applicati
 
 See [deployment folder](./deploy) for deploying into Kubernetes with Helm or into Azure with Bicep and Container Apps.
 
-# Updates
-
-- Nov 2021 - Replace DarkSky API with OpenWeather
-- Mar 2021 - Refresh packages and added make + bicep
-- Nov 2020 - Switched to MSAL-Node library for authentication
-- Oct 2020 - Added GitHub Actions pipelines and Bicep IaC
-- Jan 2020 - Added monitor page and API
-- Jun 2019 - Added Azure AD login and profile page, cleaned up Todo app MongoDB code
-- Apr 2019 - Updated to latest App Insights SDK package, and moved to Bootstrap 4
-- Dec 2018 - Modified weather to use client browser location, rather than use IP
-- Jul 2018 - Switched todo app over to MongoDB, fixed weather
-- Feb 2018 - Updated App Insights monitoring
-- Nov 2017 - Update to use Node 8.9
-- Oct 2017 - Updated App Insights, improved Dockerfile
-- Sept 2017 - Added weather page
-- Sept 2017 - Major revamp. Switched to EJS, added Bootstrap and App Insights
-- Aug 2017 - Minor changes and fixes for CRLF stuff
-- July 2017 - Updated Dockerfile to use super tiny Alpine Node 6 image
-- June 2017 - Moved repo to Github
