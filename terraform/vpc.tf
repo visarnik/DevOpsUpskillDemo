@@ -11,7 +11,7 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "devops-demo"
+  cluster_name = "devopos-demo"
 }
 
 resource "random_string" "suffix" {
