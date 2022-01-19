@@ -53,18 +53,11 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout-files
-        uses: Bhacaz/checkout-files@v1
-        with:
-          files: src
+      - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: test
-          args: | 
-            --severity-threshold=low
             
 
   build:
