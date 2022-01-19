@@ -53,7 +53,7 @@ jobs:
 
   build:
     name: 'Build & Push Image'
-    needs: test
+    needs: Sonar
     runs-on: ubuntu-latest
     steps:
       -
