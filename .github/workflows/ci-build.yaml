@@ -52,12 +52,11 @@ jobs:
   
   security:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-      # Mobile folder working directory.
-        working-directory: src
     steps:
-      - uses: actions/checkout@master
+      - name: checkout-files
+        uses: Bhacaz/checkout-files@v1
+        with:
+          files: src
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
