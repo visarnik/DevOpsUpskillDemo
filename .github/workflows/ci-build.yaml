@@ -68,6 +68,7 @@ jobs:
             test
           args: |
             --file=src/package.json
+            --severity-threshold=low
 
 
   build:
