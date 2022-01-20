@@ -2,7 +2,7 @@
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) 
 # Node.js - Demo Web Application
 
-This demo demostrates how can be created fully automated environment for automated deployments of kubernetes apps by using Terrafor as IaC tool, and Argocd as GitOps tool
+This demo demostrates how can be created fully automated environment for automated deployments of kubernetes apps by using Terraform as IaC tool, and Argocd as GitOps tool
 
 Once you have the environment up and running you will be able to deploy your apps just by uploading their manifest files 
 
