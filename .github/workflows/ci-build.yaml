@@ -59,9 +59,10 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: | 
-          cd src
-          snyc test  
+        with:
+          command: |
+            cd src
+            snyc test  
 
 
   build:
