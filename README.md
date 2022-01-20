@@ -21,14 +21,14 @@ Default output format [None]: json
   ```bash
 git clone https://github.com/visarnik/DevOpsUpskillDemo.git
 ```
-move to terraform directory and run terraform plan
+Move to terraform directory and run terraform plan
   ```bash
 cd terraform
 ```
  ```bash
  terraform apply
  ```
-when terraform is done add newly created cluster to kubectl config
+When terraform is done add newly created cluster to kubectl config
 ```bash
 aws eks --region us-east-2 update-kubeconfig --name devops-demo
 ```
@@ -37,11 +37,12 @@ Create two DNS records - one for argocd and one for demo app itself and point th
 argocd.tick42.com
 devops-demo.tick42.com
 ```
-get your argocd web interface passwrod
+Get your argocd web interface passwrod
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 ```
-default argocd user is  `admin` <br />
+Default argocd user is  `admin` <br />
+
 Now you can login and check status of your demo application
 
 
@@ -76,17 +77,12 @@ GitHub Actions  are included for CI / CD. Automated builds  are run in GitHub ho
 
 # Add new app to EKS
 
-Create coresponding manifest for argocd and put it into `argocd` folder
+Create coresponding manifest for argocd and put it in `argocd` folder
 Create Kubernetes manifests for your application using `Kustomize` and upload them into `Kubernetes` folder 
 
+Argocd will deploy your app only if it's created by `Kustomize` otherwise it won't work 
 
 
-### Weather Details
-
-Enable this by setting `WEATHER_API_KEY`
-
-This will require a API key from OpenWeather, you can [sign up for free and get one here](https://openweathermap.org/price). The page uses a browser API for geolocation to fetch the user's location.  
-However, the `geolocation.getCurrentPosition()` browser API will only work when the site is served via HTTPS or from localhost. As a fallback, weather for London, UK will be show if the current position can not be obtained
 
 # Configuration
 
@@ -104,5 +100,13 @@ If running in an Azure Web App, all of these values can be injected as applicati
 | AAD_APP_ID                     | _none_  | Application ID of app registered in Azure AD                                     |
 | AAD_APP_SECRET                 | _none_  | Secret / password of app registered in Azure AD                                  |
 | AAD_REDIRECT_URL_BASE          | _none_  | Hostname/domain where app is running                                             |
+
+### Weather Details
+
+Enable this by setting `WEATHER_API_KEY`
+
+This will require a API key from OpenWeather, you can [sign up for free and get one here](https://openweathermap.org/price). The page uses a browser API for geolocation to fetch the user's location.  
+However, the `geolocation.getCurrentPosition()` browser API will only work when the site is served via HTTPS or from localhost. As a fallback, weather for London, UK will be show if the current position can not be obtained
+
 
 
