@@ -2,7 +2,29 @@
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) 
 # Node.js - Demo Web Application
 
-
+### Pre-reqs
+This demo is configured to run on Amazon EKS, so you will need the following:
+  - Terraform required_version = ">= 0.14"
+  - AWS cli v2
+  - kubectl 1.23.0
+ 
+ ### Build AWS infrastructure 
+  Clone the repo from github
+  ```bash
+git clone https://github.com/visarnik/DevOpsUpskillDemo.git
+```
+move to terraform directory and run terraform plan
+  ```bash
+cd terraform
+```
+ ```bash
+ terraform apply
+ ```
+when terraform is done add newly created cluster to kubectl config
+```bash
+aws eks --region us-east-2 update-kubeconfig --name devops-demo
+```
+Create to DNS records - one for argocd and one for demo app itself and point them to the coresponding loadbalancer for EKS cluster
 
 # Running and Testing Locally
 
