@@ -1,5 +1,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=visarnik_DevOpsUpskillDemo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) [![Build App](https://github.com/visarnik/DevOpsUpskillDemo/actions/workflows/ci-build.yaml/badge.svg)](https://github.com/visarnik/DevOpsUpskillDemo/actions/workflows/ci-build.yaml) 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=visarnik_DevOpsUpskillDemo) 
+
 # Node.js - Demo Web Application
 
 This demo demostrates how can be created fully automated environment for automated deployments of kubernetes apps by using Terraform as IaC tool, and Argocd as GitOps tool
