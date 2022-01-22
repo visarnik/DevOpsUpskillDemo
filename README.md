@@ -81,12 +81,15 @@ Web app will be listening on the standard Express port of 3000, but this can be 
 
 GitHub Actions  are included for CI / CD. Automated builds  are run in GitHub hosted runners validating the code (linting, tests and SAST) and building the docker images. When code is pushed  into master, then automated deployment to EKS is done using argocd.
 
+![test](https://user-images.githubusercontent.com/9821722/150644291-d3aaae43-16a6-4f40-a727-7e6b35112c00.png)
+
 # Add new app to EKS
 
 Create coresponding manifest for argocd and put it in `argocd` folder
 Create Kubernetes manifests for your application using `Kustomize` and upload them into `Kubernetes` folder 
 
 Argocd will deploy your app only if it's created by `Kustomize` otherwise it won't work 
+
 
 
 
